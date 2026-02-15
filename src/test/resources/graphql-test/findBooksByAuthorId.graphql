@@ -1,0 +1,14 @@
+query findBooksByAuthorId($authorId: Int!, $page: Int, $size: Int) {
+    findBooksByAuthorId(authorId: $authorId, page: $page, size: $size) {
+        content {
+            id
+            title
+            author {
+                name
+            }
+            publishedDate
+        }
+        totalPages
+        totalElements
+    }
+}

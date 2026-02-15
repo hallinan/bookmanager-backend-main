@@ -1,0 +1,36 @@
+type Query {
+    findAllBooks(page: Int = 0, size: Int = 10): BookPage!
+    findBooksByAuthorId(authorId: Int!, page: Int = 0, size: Int = 10): BookPage!
+    findBooksByAuthorName(authorName: String!, page: Int = 0, size: Int = 10): BookPage!
+    findBooksByDateRange(startDate: String!, endDate: String, page: Int = 0, size: Int = 10): BookPage!
+    findBooksByTitle(title: String!, page: Int = 0, size: Int = 10): BookPage!
+    findAllAuthors: [Author!]!
+    findAuthorsByName(name: String!): [Author!]!
+}
+
+type Mutation {
+    createBook(title: String!, authorId: Int!, publishedDate: String!): Book!
+    updateBook(id: Int!, title: String, authorId: Int, publishedDate: String): Book!
+    deleteBook(id: Int!): Boolean!
+    createAuthor(name: String!): Author!
+}
+
+type Book {
+    id: Int
+    title: String
+    author: Author
+    publishedDate: String
+}
+
+type Author {
+    id: Int
+    name: String
+}
+
+type BookPage {
+    content: [Book!]!
+    totalElements: Int!
+    totalPages: Int!
+    number: Int!
+    size: Int!
+}

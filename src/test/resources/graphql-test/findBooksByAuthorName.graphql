@@ -1,0 +1,14 @@
+query findBooksByAuthorName($authorName: String!, $page: Int, $size: Int) {
+    findBooksByAuthorName(authorName: $authorName, page: $page, size: $size) {
+        content {
+            id
+            title
+            author {
+                name
+            }
+            publishedDate
+        }
+        totalPages
+        totalElements
+    }
+}

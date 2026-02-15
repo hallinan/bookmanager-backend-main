@@ -1,0 +1,14 @@
+query findAllBooks($page: Int, $size: Int) {
+    findAllBooks(page: $page, size: $size) {
+        content {
+            id
+            title
+            author {
+                name
+            }
+            publishedDate
+        }
+        totalPages
+        totalElements
+    }
+}

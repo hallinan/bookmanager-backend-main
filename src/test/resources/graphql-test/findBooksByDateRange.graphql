@@ -1,0 +1,14 @@
+query findBooksByDateRange($startDate: String!, $endDate: String, $page: Int, $size: Int) {
+    findBooksByDateRange(startDate: $startDate, endDate: $endDate, page: $page, size: $size) {
+        content {
+            id
+            title
+            publishedDate
+            author {
+                name
+            }
+        }
+        totalPages
+        totalElements
+    }
+}

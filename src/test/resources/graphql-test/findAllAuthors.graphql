@@ -1,0 +1,6 @@
+query findAllAuthors {
+    findAllAuthors {
+        id
+        name
+    }
+}
